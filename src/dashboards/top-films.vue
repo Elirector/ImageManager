@@ -1,29 +1,26 @@
 <template>
-    <movie :items="items"/>
+    <movie-short/>
 </template>
 
 <script>
-    import Movie from "../components/movie";
-    import getTopFilms from '../__data__/actions/get-top-films'
+ import MovieShort from "../components/movie-short";
 
-    export default {
-        name: "top-films",
-        components: {
-            Movie
-        },
-        data() {
-            return {
-                text: "Loading",
-                items: []
+ export default {
+     name: "top-films",
+     components: {
+         MovieShort
+     },
+     data() {
+         return {
+             text: "Loading",
+             items: []
 
-            }
-        },
-        created: function () {
-            getTopFilms().then((res) => this.items = res)
-        }
+         }
+     }
 
 
-    }
+
+ }
 </script>
 
 <style scoped>
