@@ -59,6 +59,25 @@ export default new Vuex.Store(
                     console.log(e);
 
                 }
+            },
+            async getConfig({commit}) {
+                try {
+                    const res = await axios.get(API_URLS.CONFIG,
+                        {
+                            params: {
+                                api_key: API_KEY
+                            }
+                        }
+                    );
+                    if (res) {
+                        const results = res.data;
+                        console.log('config', results);
+                        commit(types.CONFIG, results);
+                    }
+                } catch (e) {
+                    console.log(e);
+
+                }
             }
         },
         mutations: {

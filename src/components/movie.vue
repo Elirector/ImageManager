@@ -7,7 +7,9 @@
                         <div class="md-title">{{item.title}}</div>
                         <div class="md-subhead">{{item.tagline}}</div>
                     </md-card-header-text>
-
+                    <md-card-media>
+                        <img :src="config.images.base_url+ config.images.logo_sizes[0] + item.poster_path" :alt="item.title" />
+                    </md-card-media>
 
                 </md-card-header>
                 <md-card-content>
@@ -23,30 +25,26 @@
 <script>
     export default {
         name: "Movie",
-       data(){
+        data() {
             return {
                 params: {ID: this.$store.getters.getID}
             };
-       },
-        computed:{
+        },
+        computed: {
             items() {
                 return this.$store.getters.getMovie
             },
             config() {
-              return this.$store.getters.getConfig
+                let config = this.$store.getters.getConfig;
+                return config;
             }
         },
-        created: async function() {
-            const { params } = this;
+        created: async function () {
+            const {params} = this;
             await this.$store.dispatch('getMovie', params)
         },
         methods: {
-            //TODO: разобраться как из списка получить ID фильма
-            /*setId: function(event) {
-
-                this.params.ID = event.target.value;
-            },*/
-            getMovie: async function() {
+            getMovie: async function () {
                 const {params} = this;
                 await this.$store.dispatch("getMovie", params);
             }
