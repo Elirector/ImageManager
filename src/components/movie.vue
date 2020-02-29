@@ -15,6 +15,7 @@
                 <md-card-content>
                     <div class="md-card-content">
                         <div>Votes: {{item.vote_average}}</div>
+                        <div>Release date: {{item.release_date}}</div>
                     </div>
                 </md-card-content>
             </md-card>
@@ -45,6 +46,7 @@
         },
         methods: {
             getMovie: async function () {
+               // this.$validator.validate()
                 const {params} = this;
                 await this.$store.dispatch("getMovie", params);
             }

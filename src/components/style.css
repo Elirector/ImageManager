@@ -1,8 +1,10 @@
 .movie {
     padding: 20px;
     width: 60%;
+
   }
 
   .block {
     margin-top: 20px;
+      background-color: antiquewhite;
   }

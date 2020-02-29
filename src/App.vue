@@ -14,16 +14,11 @@
                         <md-tab id="tab-film" to="/film" md-label="Film" exact></md-tab>
                     </md-tabs>
                 </div>
-
             </md-app-toolbar>
-
-
             <md-app-content>
                 <router-view/>
             </md-app-content>
         </md-app>
-
-
     </div>
 </template>
 
@@ -31,8 +26,9 @@
     export default {
         name: 'app',
         contents: {},
-        beforeMount() {
-            this.$store.dispatch("getConfig");
+        created: async function() {
+            console.log("beforeMount");
+            await this.$store.dispatch("getConfig");
         }
     }
 </script>

@@ -30,23 +30,26 @@ export default new Vuex.Store(
                     );
                     if (res) {
                         const results = [res.data];
-                        const config = {};
                         console.log('results', results);
-                        console.log('config', config);
                         commit(types.GET_MOVIE, results);
-                        commit(types.CONFIG, config);
+
                     }
                 } catch (e) {
                     console.log(e);
 
                 }
             },
-            async getTopMovies({commit}) {
+            async getTopMovies({commit}, params) {
                 try {
+                    console.log("params",params);
                     const res = await axios.get(API_URLS.TOP_MOVIES,
                         {
                             params: {
-                                api_key: API_KEY
+                                api_key: API_KEY,
+                                sort_by: params.sort_by??"popularity.desc",
+                                "release_date.gte": params.year_from==null?null:params.year_from+"-01-01",
+                                "release_date.lte": params.year_to==null?null:params.year_to+"-12-31"
+
                             }
                         }
                     );
@@ -92,6 +95,7 @@ export default new Vuex.Store(
             },
             setId(state, ID) {
                 state.ID = ID;
+                this.dispatch("getMovie");
             }
         },
         getters: {

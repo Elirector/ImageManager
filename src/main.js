@@ -4,8 +4,10 @@ import router from './router'
 import store from './__data__/store'
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
+//import VeeValidate from "vee-validate"
 
-Vue.use(VueMaterial)
+Vue.use(VueMaterial);
+//Vue.use(VeeValidate);
 
 Vue.config.productionTip = false
 
