@@ -2,9 +2,32 @@
     padding: 20px;
     width: 60%;
 
-  }
+}
 
-  .block {
+.block {
     margin-top: 20px;
-      background-color: antiquewhite;
-  }
+    background-color: antiquewhite !important;
+    color: blueviolet !important;
+}
+
+.sort_by_select .md-menu-content-container {
+    background-color: white;
+}
+
+.filters .md-card-actions {
+    background-color: coral;
+    color: darkblue;
+}
+.md-error {
+    background-color: black;
+    color: orange;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+
+}
+
+.md-button {
+    background-color: beige;
+}
+

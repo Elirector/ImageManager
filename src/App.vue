@@ -10,8 +10,8 @@
 
                 <div class="md-toolbar-row">
                     <md-tabs>
-                        <md-tab id="tab-top" to="/" md-label="Popularity top" exact></md-tab>
-                        <md-tab id="tab-film" to="/film" md-label="Film" exact></md-tab>
+                        <md-tab id="tab-top" to="/" md-label="Список фильмов" exact></md-tab>
+                        <md-tab id="tab-film" to="/film" md-label="Фильм" exact></md-tab>
                     </md-tabs>
                 </div>
             </md-app-toolbar>
@@ -26,7 +26,7 @@
     export default {
         name: 'app',
         contents: {},
-        created: async function() {
+        created: async function () {
             console.log("beforeMount");
             await this.$store.dispatch("getConfig");
         }

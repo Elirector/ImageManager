@@ -14,8 +14,13 @@
                 </md-card-header>
                 <md-card-content>
                     <div class="md-card-content">
-                        <div>Votes: {{item.vote_average}}</div>
-                        <div>Release date: {{item.release_date}}</div>
+                        <ul>
+                        <li>Popularity: {{item.popularity}}</li>
+                        <li>Votes: {{item.vote_average}}</li>
+                        <li>Release date: {{item.release_date}}</li>
+                        <li>Revenue: ${{(item.revenue/1000000).toFixed(3)}}M</li>
+                        </ul>
+
                     </div>
                 </md-card-content>
             </md-card>

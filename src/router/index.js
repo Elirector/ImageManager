@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import TopFilms from '../dashboards/top-films'
-import Film from "../dashboards/film";
+import TopFilms from './../dashboards/top-films.vue'
+import Film from "./../dashboards/film.vue";
 
 Vue.use(VueRouter)
 

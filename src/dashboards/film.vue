@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import Movie from "../components/movie";
+    import Movie from "../components/movie.vue";
 
 
     export default {
